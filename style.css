@@ -42,7 +42,7 @@ body {
 }
 
 section {
-    padding: 120px 8%;
+    padding: 80px 8%;
     position: relative;
 }
 
@@ -51,7 +51,7 @@ h1, h2, h3 {
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 44px;
     margin-bottom: 50px;
     text-align: center;
     background: linear-gradient(90deg, var(--purple), var(--blue));
@@ -111,7 +111,7 @@ h2 {
 
 /* ================= HERO ================= */
 .hero {
-    min-height: 85vh;
+    min-height: 75vh;
     display: flex;
     align-items: center;
     padding-top: 60px;
@@ -147,7 +147,7 @@ h2 {
 }
 
 .hero-left h1 {
-    font-size: 48px;
+    font-size: 60px;
     margin-bottom: 20px;
 }
 
