@@ -50,7 +50,7 @@ document.querySelectorAll("[data-social]").forEach(btn => {
 
         if (platform === "instagram") {
 
-            const appLink = `instagram://user?username=${username}`;
+            const appLink = `instagram://user?username=lukman_akh`;
             const webLink = `https://instagram.com/lukman_akh`;
 
             window.location.href = appLink;
@@ -62,7 +62,7 @@ document.querySelectorAll("[data-social]").forEach(btn => {
 
         if (platform === "tiktok") {
 
-            const appLink = `snssdk1128://user/profile/${username}`;
+            const appLink = `snssdk1128://user/profile/@lukman_akh`;
             const webLink = `https://tiktok.com/@lukman_akh`;
 
             window.location.href = appLink;
