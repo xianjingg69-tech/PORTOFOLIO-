@@ -106,6 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     revealUpElements.forEach(el => {
         revealUpObserver.observe(el);
-    });
+        }
+    }
 
 });
