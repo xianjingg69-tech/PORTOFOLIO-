@@ -299,3 +299,86 @@ footer {
         font-size: 28px;
     }
   }
+
+/* ================= SOCIAL SECTION ================= */
+
+.social-section {
+    background: linear-gradient(135deg, #0a1f44, #111111);
+    text-align: center;
+}
+
+.social-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.social-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.social-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.social-card p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* Tombol */
+.social-card a {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    color: white;
+    transition: 0.4s;
+}
+
+/* Instagram Style */
+.social-card:nth-child(1) a {
+    background: linear-gradient(45deg, #e1306c, #fd1d1d, #fcb045);
+}
+
+.social-card:nth-child(1):hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(225, 48, 108, 0.4);
+}
+
+/* TikTok Style */
+.social-card:nth-child(2) a {
+    background: linear-gradient(45deg, #25f4ee, #fe2c55);
+}
+
+.social-card:nth-child(2):hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(37, 244, 238, 0.4);
+}
+
+/* Hover Button */
+.social-card a:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media(max-width: 768px){
+    .social-container {
+        gap: 25px;
+    }
+
+    .social-card {
+        padding: 30px 20px;
+    }
+}
