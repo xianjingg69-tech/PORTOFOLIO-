@@ -1,18 +1,21 @@
-/* ================= ROOT VARIABLES ================= */
+/* ================= GOOGLE FONT REQUIRED ================= */
+/* Tambahkan di HTML head:
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+*/
+
+/* ================= ROOT ================= */
 :root {
-    --red: #e10600;
-    --navy: #0a1f44;
-    --dark: #111111;
+    --bg-dark: #0f0c29;
+    --bg-mid: #1a1a2e;
+    --bg-light: #16213e;
+
+    --purple: #a855f7;
+    --blue: #00c3ff;
     --white: #ffffff;
-    --gray: #cccccc;
+    --gray: #cfcfcf;
 
-    --gradient-main: linear-gradient(135deg, #0a1f44, #111111);
-    --gradient-accent: linear-gradient(135deg, #e10600, #8b0000);
-
-    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.2);
-    --shadow-hard: 0 15px 40px rgba(0, 0, 0, 0.4);
-
-    --glass: rgba(255, 255, 255, 0.08);
+    --glass: rgba(255, 255, 255, 0.06);
+    --border-glass: rgba(255, 255, 255, 0.08);
 }
 
 /* ================= GLOBAL ================= */
@@ -20,18 +23,35 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-a, button, .card, .social-card {
-    transition: all 0.3s ease;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: var(--gradient-main);
     color: var(--white);
+    background:
+        radial-gradient(circle at 20% 30%, #6a00ff30, transparent 40%),
+        radial-gradient(circle at 80% 70%, #00c3ff30, transparent 40%),
+        linear-gradient(135deg, var(--bg-dark), var(--bg-mid), var(--bg-light));
+    background-attachment: fixed;
     overflow-x: hidden;
+}
+
+section {
+    padding: 120px 8%;
+    position: relative;
+}
+
+h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+    background: linear-gradient(90deg, var(--purple), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* ================= NAVBAR ================= */
@@ -39,27 +59,29 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
-    padding: 20px 60px;
+    padding: 20px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(10, 31, 68, 0.85);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(20px);
+    background: rgba(15, 12, 41, 0.6);
+    border-bottom: 1px solid var(--border-glass);
     z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .logo {
-    font-weight: 700;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 22px;
-    color: var(--red);
-    letter-spacing: 2px;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--purple), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-links {
     display: flex;
-    list-style: none;
     gap: 30px;
+    list-style: none;
 }
 
 .nav-links a {
@@ -72,11 +94,11 @@ body {
 .nav-links a::after {
     content: "";
     position: absolute;
+    bottom: -6px;
+    left: 0;
     width: 0%;
     height: 2px;
-    bottom: -5px;
-    left: 0;
-    background: var(--red);
+    background: var(--purple);
     transition: 0.3s;
 }
 
@@ -89,170 +111,116 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding-top: 120px;
-    text-align: center;
-    position: relative;
+    padding-top: 100px;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    background: var(--gradient-accent);
-    filter: blur(150px);
-    top: 20%;
-    left: 30%;
-    opacity: 0.4;
-}
-
-.hero-content {
-    position: relative;
-    background: var(--glass);
-    padding: 40px;
-    border-radius: 20px;
-    backdrop-filter: blur(20px);
-    box-shadow: var(--shadow-soft);
-}
-
-.profile-img {
-    width: 150px;
-    border-radius: 50%;
-    border: 4px solid var(--red);
-    margin-bottom: 20px;
-}
-
-.profile-img:hover {
-    transform: scale(1.05);
-    box-shadow: var(--shadow-hard);
-}
-
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.motto {
-    font-style: italic;
-    color: var(--gray);
-    margin-bottom: 20px;
-}
-
-/* HERO SOCIAL */
-.social-links {
-    margin: 20px 0;
+.hero-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.hero-left h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    background: linear-gradient(90deg, var(--purple), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.description {
+    color: var(--gray);
+    max-width: 500px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
     gap: 20px;
 }
 
-.social-links a {
-    padding: 10px 20px;
+.btn-primary {
+    background: linear-gradient(90deg, var(--purple), var(--blue));
+    padding: 12px 25px;
     border-radius: 30px;
+    color: white;
     text-decoration: none;
     font-weight: 600;
-    font-size: 14px;
-}
-
-.social-links .instagram {
-    background: linear-gradient(45deg, #e1306c, #fd1d1d, #fcb045);
-    color: white;
-}
-
-.social-links .instagram:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(225, 48, 108, 0.5);
-}
-
-.social-links .tiktok {
-    background: linear-gradient(45deg, #25f4ee, #fe2c55);
-    color: black;
-}
-
-.social-links .tiktok:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(37, 244, 238, 0.5);
-}
-
-.btn-primary {
-    background: var(--gradient-accent);
-    border: none;
-    padding: 12px 30px;
-    border-radius: 30px;
-    color: var(--white);
-    font-weight: 600;
-    cursor: pointer;
+    transition: 0.3s;
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: var(--shadow-hard);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
 }
 
-/* ================= SECTION ================= */
-section {
-    padding: 120px 10%;
+.btn-secondary {
+    border: 1px solid var(--border-glass);
+    padding: 12px 25px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
 }
 
-section h2 {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 32px;
-    position: relative;
+.btn-secondary:hover {
+    background: var(--glass);
 }
 
-section h2::after {
-    content: "";
-    width: 80px;
-    height: 4px;
-    background: var(--red);
-    display: block;
-    margin: 10px auto;
-}
-
-/* ================= ABOUT ================= */
-.about-container {
+/* PROFILE */
+.hero-right {
+    flex: 1;
     display: flex;
     justify-content: center;
 }
 
-.info-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+.profile-wrapper {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--blue));
+    padding: 6px;
+    box-shadow: 0 0 60px rgba(168, 85, 247, 0.5);
 }
 
-.info-item {
+.profile-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ================= GLASS SECTION STYLE ================= */
+.glass-box {
     background: var(--glass);
-    padding: 20px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border-glass);
+    padding: 40px;
+    border-radius: 20px;
 }
 
-.info-item:hover {
-    transform: translateY(-5px);
-}
-
-/* ================= HOBBY ================= */
-.hobby-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
+/* ================= CARDS ================= */
 .card {
-    background: var(--navy);
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border-glass);
     padding: 30px;
     border-radius: 20px;
-    box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    background: var(--gradient-accent);
+    box-shadow: 0 15px 40px rgba(0, 195, 255, 0.2);
 }
 
 /* ================= GALLERY ================= */
@@ -265,62 +233,49 @@ section h2::after {
 .gallery-grid img {
     width: 100%;
     border-radius: 15px;
-    cursor: pointer;
+    transition: 0.3s;
 }
 
 .gallery-grid img:hover {
     transform: scale(1.05);
-    box-shadow: var(--shadow-hard);
 }
 
 /* ================= SOCIAL SECTION ================= */
 .social-section {
-    background: linear-gradient(135deg, #111111, #0a1f44);
     text-align: center;
-    position: relative;
 }
 
 .social-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    justify-content: center;
     gap: 40px;
-    max-width: 900px;
-    margin: auto;
+    flex-wrap: wrap;
 }
 
 .social-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 40px 30px;
-    border-radius: 20px;
+    background: var(--glass);
     backdrop-filter: blur(15px);
-    box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid var(--border-glass);
+    padding: 40px;
+    border-radius: 20px;
+    width: 280px;
+    transition: 0.3s;
 }
 
-.social-card h3 {
-    margin-bottom: 15px;
-}
-
-.social-card p {
-    color: var(--gray);
-    margin-bottom: 20px;
+.social-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
 }
 
 .social-card a {
     display: inline-block;
-    padding: 12px 25px;
+    margin-top: 20px;
+    padding: 10px 20px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
+    background: linear-gradient(90deg, var(--purple), var(--blue));
     color: white;
-}
-
-.social-card:nth-child(1) a {
-    background: linear-gradient(45deg, #e1306c, #fd1d1d, #fcb045);
-}
-
-.social-card:nth-child(2) a {
-    background: linear-gradient(45deg, #25f4ee, #fe2c55);
 }
 
 /* ================= CONTACT ================= */
@@ -336,71 +291,40 @@ section h2::after {
 .contact textarea {
     padding: 15px;
     border-radius: 10px;
-    border: none;
+    border: 1px solid var(--border-glass);
     background: var(--glass);
-    color: var(--white);
+    color: white;
 }
 
 .contact button {
-    background: var(--red);
+    background: linear-gradient(90deg, var(--purple), var(--blue));
     padding: 15px;
     border-radius: 10px;
     border: none;
-    color: var(--white);
+    color: white;
     font-weight: 600;
-    cursor: pointer;
-}
-
-.contact button:hover {
-    background: #8b0000;
 }
 
 /* ================= FOOTER ================= */
 footer {
-    background: var(--dark);
-    padding: 30px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000px;
-    margin: auto;
-    flex-wrap: wrap;
-}
-
-.footer-social {
-    display: flex;
-    gap: 20px;
-}
-
-.footer-social a {
-    text-decoration: none;
-    color: #aaa;
-}
-
-.footer-social a:hover {
-    color: var(--red);
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid var(--border-glass);
+    background: rgba(0,0,0,0.3);
 }
 
 /* ================= RESPONSIVE ================= */
-@media(max-width: 768px){
-    .navbar {
-        padding: 20px;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .footer-content {
+@media (max-width: 900px) {
+    .hero-container {
         flex-direction: column;
         text-align: center;
-        gap: 15px;
+    }
+
+    .hero-left h1 {
+        font-size: 36px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
     }
 }
