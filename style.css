@@ -114,11 +114,11 @@ h2 {
     min-height: 85vh;
     display: flex;
     align-items: center;
-    padding-top: 50px;
+    padding-top: 60px;
     position: relative;
 }
 
-/* ABOUT ME TOP CENTER */
+/* WELCOME TO TOP CENTER */
 .tag {
     position: absolute;
     top: 85px;
