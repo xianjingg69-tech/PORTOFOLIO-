@@ -108,10 +108,10 @@ h2 {
 
 /* ================= HERO ================= */
 .hero {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 60px;
 }
 
 .hero-container {
