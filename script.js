@@ -50,7 +50,7 @@ document.querySelectorAll("[data-social]").forEach(btn => {
 
         if (platform === "instagram") {
 
-            const appLink = `instagram://user?username=lukman_akh`;
+            const appLink = `instagram://user?username=${username}`;
             const webLink = `https://instagram.com/lukman_akh`;
 
             window.location.href = appLink;
@@ -72,41 +72,4 @@ document.querySelectorAll("[data-social]").forEach(btn => {
             }, 1200);
         }
     });
-    // ================= TYPING EFFECT =================
-document.addEventListener("DOMContentLoaded", function () {
-
-    const typingElement = document.querySelector(".typing-text");
-
-    const text = "Lukman Al Khakim"; // Ganti sesuai nama kamu
-    let index = 0;
-
-    function typeEffect() {
-        if (index < text.length) {
-            typingElement.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeEffect, 80);
-        }
-    }
-
-    typeEffect();
-    
-    });
-    // ================= REVEAL FROM BOTTOM =================
-document.addEventListener("DOMContentLoaded", function () {
-
-    const revealUpElements = document.querySelectorAll(".reveal-up");
-
-    const revealUpObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-            }
-        });
-    }, { threshold: 0.15 });
-
-    revealUpElements.forEach(el => {
-        revealUpObserver.observe(el);
-        }
-    }
-
 });
