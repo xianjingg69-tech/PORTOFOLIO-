@@ -111,7 +111,7 @@ h2 {
 
 /* ================= HERO ================= */
 .hero {
-    min-height: 85vh;
+    min-height: 95vh;
     display: flex;
     align-items: center;
     padding-top: 60px;
