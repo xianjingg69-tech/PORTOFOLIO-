@@ -90,4 +90,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     typeEffect();
     
+    });
+    // ================= REVEAL FROM BOTTOM =================
+document.addEventListener("DOMContentLoaded", function () {
+
+    const revealUpElements = document.querySelectorAll(".reveal-up");
+
+    const revealUpObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
+        });
+    }, { threshold: 0.15 });
+
+    revealUpElements.forEach(el => {
+        revealUpObserver.observe(el);
+    });
+
 });
