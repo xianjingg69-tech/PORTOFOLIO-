@@ -369,4 +369,16 @@ footer {
         font-size: 18px;
         top: 80px;
     }
+    /* Kondisi awal (sembunyi & turun) */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Saat muncul */
+.reveal-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
 }
