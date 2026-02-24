@@ -1,5 +1,5 @@
 /* ================= GOOGLE FONT REQUIRED ================= */
-/* Tambahkan di HTML head:
+/* Tambahkan di HTML:
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 */
 
@@ -11,11 +11,12 @@
 
     --purple: #a855f7;
     --blue: #00c3ff;
+
     --white: #ffffff;
     --gray: #cfcfcf;
 
-    --glass: rgba(255, 255, 255, 0.06);
-    --border-glass: rgba(255, 255, 255, 0.08);
+    --glass: rgba(255,255,255,0.06);
+    --border-glass: rgba(255,255,255,0.08);
 }
 
 /* ================= GLOBAL ================= */
@@ -25,12 +26,16 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--white);
     background:
-        radial-gradient(circle at 20% 30%, #6a00ff30, transparent 40%),
-        radial-gradient(circle at 80% 70%, #00c3ff30, transparent 40%),
+        radial-gradient(circle at 20% 30%, #6a00ff40, transparent 40%),
+        radial-gradient(circle at 80% 70%, #00c3ff40, transparent 40%),
         linear-gradient(135deg, var(--bg-dark), var(--bg-mid), var(--bg-light));
     background-attachment: fixed;
     overflow-x: hidden;
@@ -47,7 +52,7 @@ h1, h2, h3 {
 
 h2 {
     font-size: 36px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     text-align: center;
     background: linear-gradient(90deg, var(--purple), var(--blue));
     -webkit-background-clip: text;
@@ -64,30 +69,28 @@ h2 {
     justify-content: space-between;
     align-items: center;
     backdrop-filter: blur(20px);
-    background: rgba(15, 12, 41, 0.6);
+    background: rgba(15,12,41,0.6);
     border-bottom: 1px solid var(--border-glass);
     z-index: 1000;
 }
 
 .logo {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 22px;
     font-weight: 700;
+    font-size: 22px;
     background: linear-gradient(90deg, var(--purple), var(--blue));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .nav-links {
+    list-style: none;
     display: flex;
     gap: 30px;
-    list-style: none;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--white);
-    font-weight: 500;
     position: relative;
 }
 
@@ -108,10 +111,26 @@ h2 {
 
 /* ================= HERO ================= */
 .hero {
-    min-height: 90vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
-    padding-top: 60px;
+    padding-top: 100px;
+    position: relative;
+}
+
+/* ABOUT ME TOP CENTER */
+.tag {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--purple), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(168,85,247,0.4);
 }
 
 .hero-container {
@@ -122,6 +141,7 @@ h2 {
     width: 100%;
 }
 
+/* LEFT SIDE */
 .hero-left {
     flex: 1;
 }
@@ -144,36 +164,50 @@ h2 {
     margin-bottom: 30px;
 }
 
+/* BUTTONS */
 .hero-buttons {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
-.btn-primary {
-    background: linear-gradient(90deg, var(--purple), var(--blue));
+.btn-primary,
+.btn-secondary,
+.btn-certificate {
     padding: 12px 25px;
     border-radius: 30px;
-    color: white;
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s;
 }
 
+.btn-primary {
+    background: linear-gradient(90deg, var(--purple), var(--blue));
+    color: white;
+}
+
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+    box-shadow: 0 10px 30px rgba(168,85,247,0.4);
 }
 
 .btn-secondary {
     border: 1px solid var(--border-glass);
-    padding: 12px 25px;
-    border-radius: 30px;
     color: white;
-    text-decoration: none;
 }
 
 .btn-secondary:hover {
     background: var(--glass);
+}
+
+.btn-certificate {
+    background: linear-gradient(90deg, #ff8c00, #ff2e63);
+    color: white;
+}
+
+.btn-certificate:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255,46,99,0.4);
 }
 
 /* PROFILE */
@@ -189,7 +223,7 @@ h2 {
     border-radius: 50%;
     background: linear-gradient(135deg, var(--purple), var(--blue));
     padding: 6px;
-    box-shadow: 0 0 60px rgba(168, 85, 247, 0.5);
+    box-shadow: 0 0 60px rgba(168,85,247,0.5);
 }
 
 .profile-wrapper img {
@@ -199,17 +233,37 @@ h2 {
     object-fit: cover;
 }
 
-/* ================= GLASS SECTION STYLE ================= */
-.glass-box {
-    background: var(--glass);
-    backdrop-filter: blur(15px);
-    border: 1px solid var(--border-glass);
-    padding: 40px;
-    border-radius: 20px;
+/* ================= STATS ================= */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    text-align: center;
 }
 
-/* ================= CARDS ================= */
-.card {
+.stat-box h3 {
+    font-size: 40px;
+    background: linear-gradient(90deg, var(--purple), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-box p {
+    color: var(--gray);
+}
+
+/* ================= GRIDS ================= */
+.about-grid,
+.card-container,
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* ================= CARD STYLE ================= */
+.card,
+.social-card {
     background: var(--glass);
     backdrop-filter: blur(15px);
     border: 1px solid var(--border-glass);
@@ -218,18 +272,13 @@ h2 {
     transition: 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 195, 255, 0.2);
+.card:hover,
+.social-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,195,255,0.2);
 }
 
 /* ================= GALLERY ================= */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
 .gallery-grid img {
     width: 100%;
     border-radius: 15px;
@@ -240,31 +289,12 @@ h2 {
     transform: scale(1.05);
 }
 
-/* ================= SOCIAL SECTION ================= */
-.social-section {
-    text-align: center;
-}
-
+/* ================= SOCIAL ================= */
 .social-container {
     display: flex;
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
-}
-
-.social-card {
-    background: var(--glass);
-    backdrop-filter: blur(15px);
-    border: 1px solid var(--border-glass);
-    padding: 40px;
-    border-radius: 20px;
-    width: 280px;
-    transition: 0.3s;
-}
-
-.social-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
 }
 
 .social-card a {
@@ -303,6 +333,7 @@ h2 {
     border: none;
     color: white;
     font-weight: 600;
+    cursor: pointer;
 }
 
 /* ================= FOOTER ================= */
@@ -315,6 +346,7 @@ footer {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
+
     .hero-container {
         flex-direction: column;
         text-align: center;
@@ -326,5 +358,15 @@ footer {
 
     .hero-buttons {
         justify-content: center;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .tag {
+        font-size: 18px;
+        top: 80px;
     }
 }
