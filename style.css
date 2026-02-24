@@ -64,7 +64,7 @@ h2 {
     position: fixed;
     width: 100%;
     top: 0;
-    padding: 20px 8%;
+    padding: 20px 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -114,17 +114,17 @@ h2 {
     min-height: 85vh;
     display: flex;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 60px;
     position: relative;
 }
 
 /* ABOUT ME TOP CENTER */
 .tag {
     position: absolute;
-    top: 90px;
+    top: 60px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
     letter-spacing: 3px;
     background: linear-gradient(90deg, var(--purple), var(--blue));
