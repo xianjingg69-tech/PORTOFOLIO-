@@ -121,7 +121,7 @@ h2 {
 /* ABOUT ME TOP CENTER */
 .tag {
     position: absolute;
-    top: 60px;
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 24px;
