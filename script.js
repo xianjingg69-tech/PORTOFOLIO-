@@ -72,4 +72,22 @@ document.querySelectorAll("[data-social]").forEach(btn => {
             }, 1200);
         }
     });
+    // ================= TYPING EFFECT =================
+document.addEventListener("DOMContentLoaded", function () {
+
+    const typingElement = document.querySelector(".typing-text");
+
+    const text = "Lukman Al Khakim"; // Ganti sesuai nama kamu
+    let index = 0;
+
+    function typeEffect() {
+        if (index < text.length) {
+            typingElement.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, 80);
+        }
+    }
+
+    typeEffect();
+    
 });
