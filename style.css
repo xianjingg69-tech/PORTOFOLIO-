@@ -124,8 +124,8 @@ h2 {
     top: 85px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 750;
     letter-spacing: 3px;
     background: linear-gradient(90deg, var(--purple), var(--blue));
     -webkit-background-clip: text;
